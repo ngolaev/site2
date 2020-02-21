@@ -1,0 +1,145 @@
+<!doctype html>
+<html>
+<style>
+    body {
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+	.row {
+		width: 80%;
+	}
+	
+	.thead {
+		border-bottom: 2px solid #fde2a4;
+        padding: 9px;
+	}
+
+    .first-col { 
+        background-color: #c0dbf1;
+		color: white;
+    }
+    .comm-col{
+        color:  #C2C4C3;
+    }
+
+</style>
+
+<head>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" 
+integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<title>Практика</title>
+</head>
+
+<body>
+
+    <div id="prompt-form-container">
+        <form id="prompt-form">
+          <div id="prompt-message">Введите текст...</div>
+          <input name="text" type="text">
+          <input type="submit" value="Ok">
+          <input type="button" name="cancel" value="Отмена">
+        </form>
+      </div>
+
+    <div align="center">
+    <img src="https://sun9-1.userapi.com/c855432/v855432255/1e94e9/ZgH4Saao_MQ.jpg" />
+
+    <div class="nametable">
+        <div class="row">
+                <div class="text-center col-md-4">
+                    <div class="first-col thead">Имя</div>
+                </div>
+                <div class="text-center col-md-4">
+                    <div class="comm-col thead">Телефон</div>
+                </div>
+                <div class="text-center col-md-4">
+                    <div class="comm-col thead">Email</div>
+                </div>
+        </div>
+        <div class="row">
+                <div class="text-center col-md-4">
+                    <div class="first-col">Иван</div>
+                </div>
+                <div class="text-center col-md-4">
+                    <div class="comm-col">Петров</div>
+                </div>
+                <div class="text-center col-md-4">
+                    <div class="comm-col">ipetrov@mail.ru</div>
+                </div>
+        </div>
+        <div class="row">
+                <div class="text-center col-md-4">
+                    <div class="first-col">Пётр</div>
+                </div>
+                <div class="text-center col-md-4">
+                    <div class="comm-col">Симаков</div>
+                </div>
+                <div class="text-center col-md-4">
+                    <div class="comm-col">psimakov@mail.ru</div>
+                </div>
+        </div>
+    </div>
+
+        <div class="row my-5" style="width: 86%">
+                <div class="text-center col-md-2 pr-md-1">
+                    <button type="button" data-toggle="modal" data-target="#addPersonModal" class="first-col">Добавить запись</button>
+                </div>
+        </div>
+    </div>
+	
+    
+    <div class="modal fade" id="addPersonModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Добавить новую запись</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <form>
+                    <div class="form-group">
+                      <label for="recipient-name" class="col-form-label">Имя:</label>
+                      <input type="text" class="form-control" placeholder="Введите имя" id="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="recipient-name" class="col-form-label">Телефон:</label>
+                        <input type="text" class="form-control" placeholder="Введите телефон" id="phone" required>
+                        </div>
+                    <div class="form-group">
+                        <label for="recipient-name" class="col-form-label">Email:</label>
+                        <input type="text" class="form-control" placeholder="Введите email" id="email" required>
+                    </div>
+                  </form>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-primary">Добавить</button>
+                </div>
+              </div>
+            </div>
+    </div>
+
+	
+	
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" 
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" 
+    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" 
+    integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+
+    <script>
+    $(document).ready(function(){
+        $('#phone').mask('+7(000)000-00-00');
+        $('#email').mask("A", {
+	        translation: {
+		    "A": { pattern: /[\w@\-.+]/, recursive: true }
+	        }
+        });
+    });
+    </script>
+</body>
+
+</html>
